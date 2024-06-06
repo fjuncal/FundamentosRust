@@ -1,15 +1,14 @@
 mod utils;
-use utils::terminal::{limpar_tela, esperar_enter};
+use utils::terminal::{limpar_tela, esperar_enter, exibir_menu};
 fn main() {
-    println!("Hello, world!");
-    println!("Hello, world!");
-    println!("Hello, world!");
-    println!("Hello, world!");
-    println!("Hello, world!");
-    println!("Hello, world!");
-    println!("Hello, world!");
-    esperar_enter();
-    limpar_tela();
-    println!("Hello, world!");
+    let itens = [
+        "Fundamentos",
+        "Tipos",
+        "Controle",
+        "Funções",
+        "Ownership"
+    ];
 
+    exibir_menu("Principal", &itens, true);
+    esperar_enter();
 }
