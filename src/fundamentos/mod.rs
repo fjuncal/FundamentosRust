@@ -17,7 +17,7 @@ pub fn executar(){
             "Operadores - Lógicos"
         ];
 
-        let selecionado = exibir_menu("Principal", &itens, true);
+        let selecionado = exibir_menu("Fundamentos", &itens, true);
 
         limpar_tela();
         match selecionado {
