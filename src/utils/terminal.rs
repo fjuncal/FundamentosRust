@@ -1,4 +1,4 @@
-
+use std::io::Write;
 use rpassword::prompt_password;
 
 pub fn exibir_menu(titulo: &str, itens: &[&str], sair: bool) -> u32{
@@ -6,8 +6,22 @@ pub fn exibir_menu(titulo: &str, itens: &[&str], sair: bool) -> u32{
     let completo = String::from("Masterclass Rust :: ") + titulo;
     println!("{}", completo);
     println!("{}", String::from("=").repeat(completo.len()));
+
     exibir_itens(itens);
-    return 10;
+
+    println!("{}", if sair {"* - Sair"} else {"*- VOLTAR"});
+    print!("\nEscolha uma opção: ");
+    std::io::stdout().flush().unwrap();
+
+    //mut é uma variavel mutavel
+    let mut linha = String::new();
+    std::io::stdin().read_line(&mut linha).unwrap();
+
+    let opcao: Result<u32, _> = linha.trim().parse();
+    match opcao {
+        Ok(opcao) => opcao,
+        _ => 0,
+    }
 }
 
 fn exibir_itens(itens: &[&str]){
