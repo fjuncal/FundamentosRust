@@ -1,3 +1,7 @@
+mod primeiro;
+mod variaveis;
+mod operadores;
+
 use crate::utils::terminal::{esperar_enter, exibir_menu, limpar_tela};
 
 pub fn executar(){
@@ -5,6 +9,7 @@ pub fn executar(){
         let itens = [
             "Primeiro Exemplo",
             "Variáveis - Imutáveis",
+            "Variáveis - Mutáveis",
             "Variáveis - Constantes",
             "Váriaveis - Shadowing",
             "Operadores - Aritméticos",
@@ -16,7 +21,14 @@ pub fn executar(){
 
         limpar_tela();
         match selecionado {
-            1 => println!("Fundamentos - 1"),
+            1 => primeiro::exemplo(),
+            2 => variaveis::imutaveis(),
+            3 => variaveis::mutaveis(),
+            4 => variaveis::constantes(),
+            5 => variaveis::shadowing(),
+            6 => operadores::aritmeticos(),
+            7 => operadores::relacionais(),
+            8 => operadores::logicos(),
             _ => break,
         }
 

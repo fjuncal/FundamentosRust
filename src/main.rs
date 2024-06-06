@@ -16,8 +16,6 @@ fn main() {
             5 => println!("5"),
             _ => exit(0)
         }
-
-        esperar_enter();
     }
 
 
